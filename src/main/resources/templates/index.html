@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Lista Alumnos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<ul class="nav justify-content-end">
+    <li class="nav-item"><a class="nav-link active" href="/">Listar Alumnos</a></li>
+</ul>
+
+<div class="container">
+
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-8">
+        <h3>Pet</h3>
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">tipo</th>
+                <th scope="col">dueño</th>
+                <th scope="col">detalle</th>
+                <th scope="col">estado</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="var:${pet}">
+                    <td th:text="${var.nombre}" />
+                    <td th:text="${var.tipo}" />
+                    <td th:text="${var.dueno}" />
+                    <td th:text="${var.detalle}" />
+                    <td th:text="${var.estado}" />
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-2">
+        <p></p>
+    </div>
+</div>
+</body>
+</html>
